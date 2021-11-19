@@ -1,0 +1,44 @@
+.from-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.input-style-signup {
+    margin: 5px;
+    padding: 15px;
+    width: 400px;
+    background-color: #f5f5f5;
+    outline: none;
+    border: none;
+
+}
+
+.btn-signup {
+    margin: 5px;
+    padding: 15px;
+    width: 400px;
+    background-color: #f91945;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-already-account {
+    margin: 5px;
+    padding: 15px;
+    width: 400px;
+    background-color: #ffffff;
+    color: #f91945;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.logo-signup{
+    width: 250px;
+    margin: 25px;
+}

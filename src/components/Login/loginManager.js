@@ -4,8 +4,9 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, createUserWithEm
 import firebaseConfig from './firebase.config'
 const provider = new GoogleAuthProvider();
 export const initializeLoginFramework = () => {
-    
+
     const app = initializeApp(firebaseConfig);
+
 }
 
 export const handleGoogleSingIn = () => {
@@ -60,9 +61,9 @@ export const handleSingOut = () => {
     });
 }
 
-export const createUserWithEmailAndPasswordByCustom = (name,email,password) => {
+export const createUserWithEmailAndPasswordByCustom = (name, email, password) => {
     const auth = getAuth();
-   return createUserWithEmailAndPassword(auth, email, password)
+    return createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
@@ -80,12 +81,12 @@ export const createUserWithEmailAndPasswordByCustom = (name,email,password) => {
             newUserInfo.error = errorCode;
             newUserInfo.complect = '';
             console.log(errorCode)
-           return newUserInfo;
+            return newUserInfo;
         });
     // console.log(user.email,user.password)
 }
 
-export const signInWithEmailAndPasswordByCustom = (email,password) => {
+export const signInWithEmailAndPasswordByCustom = (email, password) => {
     const auth = getAuth();
     return signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -94,7 +95,7 @@ export const signInWithEmailAndPasswordByCustom = (email,password) => {
             const newUserInfo = { ...user };
             newUserInfo.complect = "Successfully LogIn";
             newUserInfo.error = '';
-           return newUserInfo;
+            return newUserInfo;
             // history.replace(from)
             // console.log ('okkk')
             // ...
@@ -102,7 +103,7 @@ export const signInWithEmailAndPasswordByCustom = (email,password) => {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            const newUserInfo = {  };
+            const newUserInfo = {};
             newUserInfo.error = errorCode;
             newUserInfo.complect = '';
             console.log(errorCode)

@@ -1,54 +1,62 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './App.css';
-import Header from './components/Header/Header';
-import Inventory from './components/Inventory/Inventory';
-import NotFound from './components/NotFound/NotFound';
-import OrderReview from './components/OrderReview/OrderReview';
-import PlaceOrder from './components/PlaceOrder/PlaceOrder';
-import Shop from './components/Shop/Shop';
-import Login from './components/Login/Login';
-import Shipment from './components/Shipment/Shipment';
 import { createContext, useState } from 'react';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import './App.css';
+import Footer from './components/Footer/Footer';
 
-export const UserContext=createContext();
+import Home from './components/Home/Home';
+import HomeDescription from './components/HomeDescription/HomeDescription';
+import ToAppBar from './components/TopAppBar/TopAppBar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import FoodDetails from './components/FoodDetails/FoodDetails';
+
+
+import Login from './components/Login/Login';
+import Signup from './components/Login/Signup';
+import Cart from './components/Cart/Cart';
+
+
+export const UserContext = createContext();
+
+
 
 
 function App() {
+
+  const [foods, setFoods] = useState([])
+  // const [foods, setFoods] = useState([])
+
   const [loggedInUser, setLoggedInUser] = useState({})
+
   return (
-    <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
-      <h3>{loggedInUser.email}</h3>
-      {/* link always need in router */}
-        <Header></Header>
+        <ToAppBar />
+
         <Switch>
           <Route exact path="/">
-            <Shop></Shop>
+
+            <Home foods={foods} setFoods={setFoods} />
+            <HomeDescription />
           </Route>
-          <Route path="/shop">
-            <Shop></Shop>
+          <Route path="/home">
+            <Home foods={foods} setFoods={setFoods} />
+            <HomeDescription />
           </Route>
-          <Route path="/review">
-            <OrderReview></OrderReview>
+          <Route path="/food/:foodId">
+            <FoodDetails />
           </Route>
-          <PrivateRoute path="/inventory">
-            <Inventory></Inventory>
-          </PrivateRoute>
-          <Route path="/placeorder">
-            <PlaceOrder></PlaceOrder>
+          <Route path='/login'>
+            <Login />
           </Route>
-          <Route path="/login">
-            <Login></Login>
+          <Route path='/signup'>
+            <Signup />
           </Route>
-          <PrivateRoute path="/shipment">
-            <Shipment></Shipment>
-          </PrivateRoute>
-          <Route path="*">
-            <NotFound></NotFound>
+          <Route path='/cart'>
+            <Cart />
           </Route>
         </Switch>
       </Router>
+
+      <Footer />
 
     </UserContext.Provider>
   );

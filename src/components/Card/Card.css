@@ -1,0 +1,16 @@
+.imageWidth {
+    width: 250px;
+    height: auto;
+}
+.card-container {
+    margin: 0px 100px;
+    padding: 30px;
+}
+.card-container:hover {
+    /* shadow */
+    box-shadow: 4px 4px 8px 8px rgba( 0, 0, 0, 0.2);
+    transition: all 0.5s;
+    cursor: pointer;
+    /* extra margin */
+}
+

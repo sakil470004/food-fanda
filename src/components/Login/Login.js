@@ -1,16 +1,20 @@
+import './Login.css'
 
+import React, { useContext, useState } from 'react'
+import logo2 from './logo2.png';
+import { useHistory, useLocation } from 'react-router';
+import { initializeLoginFramework, signInWithEmailAndPasswordByCustom } from './loginManager';
 import { UserContext } from '../../App';
 
-
-import { useContext, useState } from 'react';
-import { useHistory, useLocation } from 'react-router';
-import { initializeLoginFramework, handleGoogleSingIn, handleSingOut, createUserWithEmailAndPasswordByCustom, signInWithEmailAndPasswordByCustom } from './loginManager';
-
 initializeLoginFramework()
-
-function Login() {
-
+export default function Login() {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [newUser, setNewUser] = useState(false)
+    const history = useHistory();
+    const location = useLocation()
+
+    let { from } = location.state || { from: { pathname: "/" } };
+
     const [user, setUser] = useState({
         isSignIn: false,
         name: '',
@@ -20,33 +24,6 @@ function Login() {
         error: '',
         complect: ''
     });
-
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
-
-    const history = useHistory();
-    const location = useLocation()
-
-    let { from } = location.state || { from: { pathname: "/" } };
-
-    const googleSingIn = () => {
-
-        handleGoogleSingIn()
-            .then(res => {
-                setUser(res);
-                setLoggedInUser(res);
-                history.replace(from);
-            });
-
-    }
-    const signOut = () => {
-
-        handleSingOut()
-            .then(res => {
-                setUser(res);
-                setLoggedInUser(res);
-            })
-
-    }
 
 
     const handleBlur = (event) => {
@@ -69,16 +46,16 @@ function Login() {
         }
     }
     const handleSubmit = (e) => {
-        if (user.name && user.password) {
-            createUserWithEmailAndPasswordByCustom(user.name, user.email, user.password)
-                .then(res => {
-                    setUser(res);
-                    setLoggedInUser(res);
-                    history.replace(from);
-                })
+        // if (user.name && user.password) {
+        //     createUserWithEmailAndPasswordByCustom(user.name, user.email, user.password)
+        //         .then(res => {
+        //             setUser(res);
+        //             setLoggedInUser(res);
+        //             history.replace(from);
+        //         })
 
-        }
-        if (!newUser && user.email && user.password) {
+        // }
+        if (user.email && user.password) {
             signInWithEmailAndPasswordByCustom(user.email, user.password)
                 .then(res => {
                     setUser(res);
@@ -87,46 +64,32 @@ function Login() {
                 })
 
         }
-        console.log('okkk', user.email, newUser, user.password, 'sakil')
+        // console.log('okkk', user.email, newUser, user.password, 'sakil')
         e.preventDefault();
     }
 
+    const handleNeedAccount = () => {
+        let url = '/signup';
+        history.push(url);
+    }
+
     return (
-        <div className="" style={{ textAlign: 'center', marginTop: '20px' }}>
 
-            {user.isSignIn ?
-                <button onClick={signOut} >Sing Out</button>
-                : <button onClick={googleSingIn}>Sing In</button>
 
-            }
-            {
-                user.isSignIn &&
-                <div>
-                    <p>Welcome, {user.name}</p>
-                    <p>Your email ,{user.email}</p>
-                    <img src={user.photo} alt=''></img>
+        <div>
+            <div className='from-container'>
+                <div >
+                    <img className='logo-login' src={logo2} />
                 </div>
-            }
 
-            <h1>Our own Authentication</h1>
+                <input className='input-style-login' type='email' onBlur={handleBlur} placeholder='Email' required name='email' />
+                <input className='input-style-login' type='password' onBlur={handleBlur} placeholder='Password' required name='password' />
 
-            <input type='checkbox' onChange={() => setNewUser(!newUser)} name='newUser' id='' />
-            <label htmlFor="newUser">New User Sign</label>
-            <form onSubmit={handleSubmit}>
+             
+                <button onClick={handleSubmit} className='btn-login'>Sign In</button>
+                <button onClick={handleNeedAccount} className='btn-need-an-account'>Need an account</button>
 
-                {newUser && <input type='text' name='name' onBlur={handleBlur} placeholder='Enter your name' />}
-                <br />
-                <input type='text' onBlur={handleBlur} placeholder='Your Email address' required name='email' />
-                <br />
-                <input type='password' onBlur={handleBlur} placeholder='your password' name='password' required />
-                <br />
-                <input type='submit' value='Submit' />
-                <p style={{ color: 'red' }}>{user.error}</p>
-                <p style={{ color: 'green' }}>{user.complect}</p>
-
-            </form>
+            </div>
         </div>
-    );
+    )
 }
-
-export default Login;

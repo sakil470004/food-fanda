@@ -1,0 +1,37 @@
+.header {
+    text-align: center;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.header div {
+    background-color: #ffffff;
+    line-height: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 50px;
+    
+
+}
+
+.header div button {
+    margin: 0px 15px;
+    padding: 10px;
+    color: #fa4062ea;
+    /* border-bottom: 4px solid #F91944; */
+    cursor: pointer;
+    border:none;
+    background-color: #ffffff;
+    outline: none;
+    font-size: 26px;
+    line-height: 30px;
+    transition: all 0.5s;
+}
+
+.header div button hr {
+    height: 3px;
+    background-color: #F91944;
+    width: 55px;
+    /* cursor: pointer; */
+}

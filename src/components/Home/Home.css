@@ -1,0 +1,41 @@
+.background-cointainer-home {
+    height: 550px;
+    background-image: url('./bannerbackground.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.background-cointainer-home h1 {
+    text-align: center;
+    width: 100%;
+
+}
+
+.home-search-input {
+    outline: none;
+    color: black;
+
+    padding: 15px;
+    border: none;
+    border-radius: 105px;
+
+}
+
+.home-search-btn {
+    
+    outline: none;
+    background-color: #f91944;
+    border-radius: 105px;
+    width: 90px;
+    height: 40px;
+   padding: 5px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    margin-left: -50px;
+}
