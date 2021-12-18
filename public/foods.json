@@ -2,7 +2,7 @@
     {
         "key": "1",
         "category": "breakfast",
-        "name": "breakfast1",
+        "name": "Dimpose With gaja",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -17,7 +17,7 @@
 {
         "key": "2",
         "category": "breakfast",
-        "name": "breakfast2",
+        "name": "Tost and Dim",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -33,7 +33,7 @@
 {
         "key": "3",
         "category": "breakfast",
-        "name": "breakfast3",
+        "name": "Pasty",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -48,7 +48,7 @@
     {
         "key": "4",
         "category": "breakfast",
-        "name": "breakfast4",
+        "name": "Dim ar Cotcoty",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -63,7 +63,7 @@
    {
         "key": "5",
         "category": "breakfast",
-        "name": "breakfast5",
+        "name": "Dim Pose With tost",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -78,7 +78,7 @@
     {
         "key": "6",
         "category": "breakfast",
-        "name": "breakfast6",
+        "name": "Half Pose With Crime",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -94,7 +94,7 @@
         {
         "key": "7",
         "category": "dinner",
-        "name": "dinner1",
+        "name": "Kopi Baji",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -110,7 +110,7 @@
         {
         "key": "8",
         "category": "dinner",
-        "name": "dinner2",
+        "name": "Pata Baji",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -126,7 +126,7 @@
         {
         "key": "9",
         "category": "dinner",
-        "name": "dinner3",
+        "name": "Kata Paruti",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -142,7 +142,7 @@
         {
         "key": "10",
         "category": "dinner",
-        "name": "dinner4",
+        "name": "Pastaaa",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -157,7 +157,7 @@
       {
         "key": "11",
         "category": "dinner",
-        "name": "dinner5",
+        "name": "Paruti with pata",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -173,7 +173,7 @@
       {
         "key": "12",
         "category": "dinner",
-        "name": "dinner6",
+        "name": "Pata With Amish",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -189,7 +189,7 @@
       {
         "key": "13",
         "category": "lunch",
-        "name": "lunch1",
+        "name": "Cake Pice",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -205,7 +205,7 @@
       {
         "key": "14",
         "category": "lunch",
-        "name": "lunch2",
+        "name": "Murgi",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -220,7 +220,7 @@
        {
         "key": "15",
         "category": "lunch",
-        "name": "lunch3",
+        "name": "Roll",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -235,7 +235,7 @@
      {
         "key": "16",
         "category": "lunch",
-        "name": "lunch4",
+        "name": "Goru",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -250,7 +250,7 @@
      {
         "key": "17",
         "category": "lunch",
-        "name": "lunch5",
+        "name": "Murgi leg",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",
@@ -265,7 +265,7 @@
      {
         "key": "18",
         "category": "lunch",
-        "name": "lunch6",
+        "name": "Mas ar Pice",
         "description":"This is the one of our best selling point",
         "seller": "3M",
         "wholePrice": "68",

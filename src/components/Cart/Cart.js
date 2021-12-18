@@ -7,41 +7,47 @@ import { useHistory } from 'react-router';
 export default function Cart() {
     const [cartFood, setCartFood] = useState([])
     const history = useHistory();
+
+    const fetchDataFromLocalStorage = (data) => {
+        // setFoods(data)
+        // console.log(data)
+        const savedCart = getStoredCart();
+
+        // console.log(data)
+        // console.log(savedCart)
+        if (savedCart) {
+            const storedCart = [];
+            for (const key in savedCart) {
+                const addedProduct = data.find(product => product.key === key);
+                // console.log("iam here")
+                if (addedProduct) {
+                    // set quantity
+                    const quantity = savedCart[key];
+                    addedProduct.quantity = quantity;
+                    storedCart.push(addedProduct);
+                }
+            }
+            // setCart(storedCart);
+            // console.log(storedCart)
+            setCartFood(storedCart)
+        }
+    }
+
     useEffect(() => {
         fetch('./foods.json')
             .then(res => res.json())
             .then(data => {
+                fetchDataFromLocalStorage(data)
 
 
 
-                // setFoods(data)
-                // console.log(data)
-                const savedCart = getStoredCart();
-
-                // console.log(data)
-                // console.log(savedCart)
-                if (savedCart) {
-                    const storedCart = [];
-                    for (const key in savedCart) {
-                        const addedProduct = data.find(product => product.key === key);
-                        // console.log("iam here")
-                        if (addedProduct) {
-                            // set quantity
-                            const quantity = savedCart[key];
-                            addedProduct.quantity = quantity;
-                            storedCart.push(addedProduct);
-                        }
-                    }
-                    // setCart(storedCart);
-                    console.log(storedCart)
-                    setCartFood(storedCart)
-                }
             })
 
-    }, [cartFood]);
+    }, []);
     const handleRemove = (key) => {
         removeFromDb(key);
         //    history.push('/cart')
+        fetchDataFromLocalStorage(cartFood)
 
     }
     return (
@@ -67,11 +73,12 @@ export default function Cart() {
                                     <button onClick={() => handleRemove(food.key)}>remove</button>
                                 </div>
                             </div>
-                            {!cartFood.length &&
+
+                            {/* {!cartFood[0]?.key &&
 
                                 <h1 style={{ textAlign: 'center' }}>
                                     Empty Cart
-                                </h1>}
+                                </h1>} */}
                         </div>
 
                     );
