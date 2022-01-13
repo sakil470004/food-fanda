@@ -18,7 +18,7 @@ export default function Cart() {
         if (savedCart) {
             const storedCart = [];
             for (const key in savedCart) {
-                const addedProduct = data.find(product => product.key === key);
+                const addedProduct = data.find(product => product._id === key);
                 // console.log("iam here")
                 if (addedProduct) {
                     // set quantity
@@ -34,7 +34,7 @@ export default function Cart() {
     }
 
     useEffect(() => {
-        fetch('./foods.json')
+        fetch('http://localhost:5000/foods')
             .then(res => res.json())
             .then(data => {
                 fetchDataFromLocalStorage(data)
@@ -59,8 +59,8 @@ export default function Cart() {
                         <div>
                             <div className='cart-div-main-wrapper'>
                                 <Card className=''
-                                    key={food.key}
-                                    id={food.key}
+                                    key={food._id}
+                                    id={food._id}
                                     name={food.name}
                                     image={food.img}
                                     description={food.description}
@@ -70,7 +70,7 @@ export default function Cart() {
                                 <div>
                                     <h4> Quantity : {food.quantity}</h4>
                                     <h2>Total : {(food.quantity * food.price).toFixed(2)}</h2>
-                                    <button onClick={() => handleRemove(food.key)}>remove</button>
+                                    <button onClick={() => handleRemove(food._id)}>remove</button>
                                 </div>
                             </div>
 

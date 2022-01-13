@@ -12,7 +12,7 @@ export default function Home({ foods, setFoods }) {
 
 
     useEffect(() => {
-        fetch('./foods.json')
+        fetch('http://localhost:5000/foods')
             .then(res => res.json())
             .then(data => {
                 if (searchField === '') {

@@ -71,6 +71,13 @@ export default function ToAppBar() {
     const handleCart = () => {
         history.push('/cart')
     }
+    const handleAddFood = () => {
+        history.push('/addFood') 
+    }
+    const handleManageFood = () => {
+        history.push('/manageFood') 
+
+    }
 
     const menuId = 'primary-search-account-menu';
     const renderMenu = (
@@ -145,7 +152,7 @@ export default function ToAppBar() {
             </MenuItem>
         </Menu>
     );
-    
+
 
 
     return (
@@ -168,6 +175,9 @@ export default function ToAppBar() {
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         {/* <IconButton size="large" aria-label="show 4 new mails" color="inherit"> */}
                         {/* <Badge badgeContent={0} color="black"> */}
+                        <button onClick={handleAddFood} className='topAppBar-login-btn'>Add Food</button>
+                        <button onClick={handleManageFood} className='topAppBar-login-btn'>Manage Food</button>
+
                         <ShoppingCartIcon onClick={handleCart} className='top-app-bar-ShoppingCartIcon' />
                         {/* </Badge> */}
                         {/* </IconButton> */}

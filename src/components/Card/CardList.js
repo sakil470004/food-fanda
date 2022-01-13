@@ -12,8 +12,8 @@ const CardList = ({ foods }) => {
           return (
 
             <Card className=''
-              key={food.key}
-              id={food.key}
+              key={food._id}
+              id={food._id}
               name={food.name}
               image={food.img}
               description={food.description}

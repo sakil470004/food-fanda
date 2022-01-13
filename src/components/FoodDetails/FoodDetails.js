@@ -17,11 +17,11 @@ export default function FoodDetails() {
 
 
     useEffect(() => {
-        fetch('/foods.json')
+        fetch('http://localhost:5000/foods')
             .then(res => res.json())
             .then(data => {
 
-                const found = data.find(element => element.key == foodId);
+                const found = data.find(element => element._id == foodId);
                 setCurrentFood(found)
 
             })
@@ -39,14 +39,16 @@ export default function FoodDetails() {
 
     }
     const handleAddCartButton = () => {
-        addToDb2(currentFood.key, itemCount);
-        console.log('item added')
+        addToDb2(currentFood._id, itemCount);
+        // console.log('item added')
+        console.log(currentFood)
+        alert('Item Added')
     }
 
     return (
         <div className='full-detail-pic-container-food-details'>
             <div className='left-container-foodDetails'>
-                <h1>Light Breakfast</h1>
+                <h1>{currentFood.name}</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia voluptatem, repudiandae explicabo, placeat amet dicta laboriosam dolores inventore sequi eligendi ratione, magnam vero ipsum totam incidunt nemo excepturi ad earum.</p>
                 <div className='countFood-div-wrapper-food-details'>
 

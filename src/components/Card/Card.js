@@ -9,14 +9,14 @@ const Card = ({ name, image, id, description, price }) => {
   const handleButton = () => {
     history.push(url);
   }
-  
+
 
   return (
-    
 
-    <div  className = 'card-container tc  br4 dib bw2 '
-      onClick = { handleButton }
-      >
+
+    <div className='card-container tc  br4 dib bw2 '
+      onClick={handleButton}
+    >
       <img className='imageWidth br4' alt='drinks' src={image} />
       <div>
         <h2>{name}</h2>

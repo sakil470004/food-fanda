@@ -12,6 +12,8 @@ import FoodDetails from './components/FoodDetails/FoodDetails';
 import Login from './components/Login/Login';
 import Signup from './components/Login/Signup';
 import Cart from './components/Cart/Cart';
+import AddFood from './components/AddFood/AddFood';
+import ManageFood from './components/ManageFood/ManageFood';
 
 
 export const UserContext = createContext();
@@ -52,6 +54,12 @@ function App() {
           </Route>
           <Route path='/cart'>
             <Cart />
+          </Route>
+          <Route path='/addFood'>
+            <AddFood />
+          </Route>
+          <Route path='/manageFood'>
+            <ManageFood/>
           </Route>
         </Switch>
       </Router>
