@@ -4,7 +4,7 @@ import './ManageFood.css'
 export default function ManageFood() {
     const [foods, setFoods] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/foods')
+        fetch('https://foodspanda.herokuapp.com/foods')
             .then(res => res.json())
             .then(data => setFoods(data));
     }, [])
@@ -12,7 +12,7 @@ export default function ManageFood() {
     const handleDelete = (id) => {
     
       
-        const url = `http://localhost:5000/foods/${id}`;
+        const url = `https://foodspanda.herokuapp.com/foods/${id}`;
         fetch(url, {
             method: 'DELETE'
         })

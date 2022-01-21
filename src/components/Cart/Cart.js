@@ -34,7 +34,7 @@ export default function Cart() {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/foods')
+        fetch('https://foodspanda.herokuapp.com/foods')
             .then(res => res.json())
             .then(data => {
                 fetchDataFromLocalStorage(data)

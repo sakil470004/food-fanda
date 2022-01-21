@@ -9,7 +9,7 @@ export default function AddFood() {
     const onSubmit = data => {
         // console.log(data);
         
-        axios.post('http://localhost:5000/foods',data)
+        axios.post('https://foodspanda.herokuapp.com/foods',data)
         .then(res=>{
             if(res.data.insertedId){
                 alert('added successfully')
